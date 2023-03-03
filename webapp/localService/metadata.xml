@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZUI_FLIGHT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="I_CurrencyType" sap:label="Currency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Currency"/>
+                </Key>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="Currency_Text" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="Currency_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Decimals" Type="Edm.Byte" sap:label="Decimal Places" sap:quickinfo="Number of decimal places"/>
+                <Property Name="CurrencyISOCode" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="ISO Code" sap:quickinfo="ISO Currency Code"/>
+                <Property Name="AlternativeCurrencyKey" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Alternative Key"/>
+                <Property Name="IsPrimaryCurrencyForISOCrcy" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Primary" sap:quickinfo="Primary SAP Currency Code for ISO Code"/>
+            </EntityType>
+            <EntityType Name="ZC_FlightType" sap:label="Consumption View SFLIGHT" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Airline"/>
+                    <PropertyRef Name="FlightNumber"/>
+                    <PropertyRef Name="FlightDate"/>
+                </Key>
+                <Property Name="Airline" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Airline" sap:quickinfo="Airline Code"/>
+                <Property Name="FlightNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Connection Number" sap:quickinfo="Flight Connection Number"/>
+                <Property Name="FlightDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Flight Date" sap:quickinfo="Flight date"/>
+                <Property Name="Price" Type="Edm.Decimal" Precision="16" Scale="3" sap:label="Airfare"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Airline Currency" sap:quickinfo="Local currency of airline" sap:semantics="currency-code"/>
+                <Property Name="PlaneType" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Plane Type" sap:quickinfo="Aircraft Type"/>
+                <Property Name="SeatsMax" Type="Edm.Int32" sap:label="Max. Capacity Econ." sap:quickinfo="Maximum Capacity in Economy Class"/>
+                <Property Name="SeatsOccupied" Type="Edm.Int32" sap:label="Occupied econ." sap:quickinfo="Occupied seats in economy class"/>
+                <Property Name="PaymentSum" Type="Edm.Decimal" Precision="18" Scale="3" sap:unit="Currency" sap:label="Booking total" sap:quickinfo="Total of current bookings"/>
+                <Property Name="SeatsMaxB" Type="Edm.Int32" sap:label="Max. Capacity Bus." sap:quickinfo="Maximum Capacity in Business Class"/>
+                <Property Name="SeatsOccupiedB" Type="Edm.Int32" sap:label="Occupied bus." sap:quickinfo="Occupied seats in business class"/>
+                <Property Name="SeatsMaxF" Type="Edm.Int32" sap:label="Max. Capacity 1st" sap:quickinfo="Maximum Capacity in First Class"/>
+                <Property Name="SeatsOccupiedF" Type="Edm.Int32" sap:label="Occupied 1st" sap:quickinfo="Occupied seats in first class"/>
+                <NavigationProperty Name="to_Book" Relationship="ZUI_FLIGHT_SRV.assoc_7942BDF42080D9653BDAE507D37D4892" FromRole="FromRole_assoc_7942BDF42080D9653BDAE507D37D4892" ToRole="ToRole_assoc_7942BDF42080D9653BDAE507D37D4892"/>
+                <NavigationProperty Name="to_Currency" Relationship="ZUI_FLIGHT_SRV.assoc_033E79A19535017DC4337ECFECDC1E70" FromRole="FromRole_assoc_033E79A19535017DC4337ECFECDC1E70" ToRole="ToRole_assoc_033E79A19535017DC4337ECFECDC1E70"/>
+                <NavigationProperty Name="to_FlightSchedule" Relationship="ZUI_FLIGHT_SRV.assoc_1E1FF11F95CAC7E2321D27D7B3874941" FromRole="FromRole_assoc_1E1FF11F95CAC7E2321D27D7B3874941" ToRole="ToRole_assoc_1E1FF11F95CAC7E2321D27D7B3874941"/>
+                <NavigationProperty Name="to_Ticket" Relationship="ZUI_FLIGHT_SRV.assoc_965191F0DFD899B4485EC07C9C8A0125" FromRole="FromRole_assoc_965191F0DFD899B4485EC07C9C8A0125" ToRole="ToRole_assoc_965191F0DFD899B4485EC07C9C8A0125"/>
+            </EntityType>
+            <EntityType Name="ZI_BookingType" sap:label="Interface View for SBOOK" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Airline"/>
+                    <PropertyRef Name="FlightNumber"/>
+                    <PropertyRef Name="FlightDate"/>
+                    <PropertyRef Name="BookingId"/>
+                </Key>
+                <Property Name="Airline" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Airline" sap:quickinfo="Airline Code"/>
+                <Property Name="FlightNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Connection Number" sap:quickinfo="Flight Connection Number"/>
+                <Property Name="FlightDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Flight Date" sap:quickinfo="Flight date"/>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Booking number"/>
+                <Property Name="Customer" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Customer Number"/>
+                <Property Name="CustomerType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="B/P customer" sap:quickinfo="Customer type"/>
+                <Property Name="Smoker" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Smoker"/>
+                <Property Name="LuggageWeight" Type="Edm.Decimal" Precision="8" Scale="4" sap:label="Luggage Weight" sap:quickinfo="Weight of Luggage"/>
+                <Property Name="WeightUnit" Type="Edm.String" MaxLength="3" sap:label="Unit of Measurement" sap:quickinfo="Weight Unit" sap:semantics="unit-of-measure"/>
+                <Property Name="Invoice" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Invoice flag"/>
+                <Property Name="Class" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Class" sap:quickinfo="Flight Class"/>
+                <Property Name="PriceForeignCurrency" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="ForeignCurrency" sap:label="Amount" sap:quickinfo="Booking price in foreign currency (dependent on location)"/>
+                <Property Name="ForeignCurrency" Type="Edm.String" MaxLength="5" sap:label="Paymnt currency" sap:quickinfo="Payment currency" sap:semantics="currency-code"/>
+                <Property Name="PriceLocalCurrency" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="LocalCurrency" sap:label="Amount (loc.currncy)" sap:quickinfo="Price of booking in local currency of airline"/>
+                <Property Name="LocalCurrency" Type="Edm.String" MaxLength="5" sap:label="Airline Currency" sap:quickinfo="Local currency of airline" sap:semantics="currency-code"/>
+                <Property Name="OrderDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Posting date" sap:quickinfo="Booking Date"/>
+                <Property Name="Counter" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Sales office" sap:quickinfo="Number of sales office"/>
+                <Property Name="AgencyNumber" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Agency No." sap:quickinfo="Travel Agency Number"/>
+                <Property Name="Cancelled" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Cancelation flag"/>
+                <Property Name="Reserved" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Reserved" sap:quickinfo="Reservation flag"/>
+                <Property Name="PassengerName" Type="Edm.String" MaxLength="25" sap:label="Passenger Name" sap:quickinfo="Name of the Passenger"/>
+                <Property Name="PassengerFormOfAddress" Type="Edm.String" MaxLength="15" sap:label="Form of address"/>
+                <Property Name="PassengerBirthDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="DOB of Passenger" sap:quickinfo="Date of Birth of a Passenger"/>
+            </EntityType>
+            <EntityType Name="ZI_FlightScheduleType" sap:label="Interface View for SPFLI" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Airline"/>
+                    <PropertyRef Name="FlightNumber"/>
+                </Key>
+                <Property Name="Airline" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Airline" sap:quickinfo="Airline Code"/>
+                <Property Name="FlightNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Connection Number" sap:quickinfo="Flight Connection Number"/>
+                <Property Name="CountryFrom" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country/Region Key"/>
+                <Property Name="CityFrom" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Depart. city" sap:quickinfo="Departure city"/>
+                <Property Name="AirportFrom" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Departure airport"/>
+                <Property Name="CountryTo" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country/Region Key"/>
+                <Property Name="CityTo" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Arrival city"/>
+                <Property Name="AirportTo" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Destination airport"/>
+                <Property Name="FlightTime" Type="Edm.String" MaxLength="11" sap:label="Flight time"/>
+                <Property Name="DepartTime" Type="Edm.Time" Precision="0" sap:label="Departure time"/>
+                <Property Name="ArrivalTime" Type="Edm.Time" Precision="0" sap:label="Arrival Time" sap:quickinfo="Arrival time"/>
+                <Property Name="Distance" Type="Edm.Decimal" Precision="9" Scale="4" sap:unit="DistanceUnit" sap:label="Distance"/>
+                <Property Name="DistanceUnit" Type="Edm.String" MaxLength="3" sap:label="Distance in" sap:quickinfo="Mass unit of distance (kms, miles)" sap:semantics="unit-of-measure"/>
+                <Property Name="FlightType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Charter flt" sap:quickinfo="Flight type"/>
+                <Property Name="Period" Type="Edm.Byte" sap:label="n day(s) later" sap:quickinfo="Arrival n day(s) later"/>
+            </EntityType>
+            <EntityType Name="ZI_TicketType" sap:label="Interface View for STICKET" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Airline"/>
+                    <PropertyRef Name="FlightNumber"/>
+                    <PropertyRef Name="FlightDate"/>
+                    <PropertyRef Name="BookingId"/>
+                    <PropertyRef Name="Customer"/>
+                    <PropertyRef Name="Ticket"/>
+                </Key>
+                <Property Name="Airline" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Airline" sap:quickinfo="Airline Code"/>
+                <Property Name="FlightNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Connection Number" sap:quickinfo="Flight Connection Number"/>
+                <Property Name="FlightDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Flight Date" sap:quickinfo="Flight date"/>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Booking number"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Customer Number"/>
+                <Property Name="Ticket" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="Ticket type"/>
+                <Property Name="Place" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Location" sap:quickinfo="Ticket use location"/>
+                <Property Name="Archive" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Archive ID" sap:quickinfo="Internal SAP use"/>
+            </EntityType>
+            <Association Name="assoc_033E79A19535017DC4337ECFECDC1E70" sap:content-version="1">
+                <End Type="ZUI_FLIGHT_SRV.ZC_FlightType" Multiplicity="1" Role="FromRole_assoc_033E79A19535017DC4337ECFECDC1E70"/>
+                <End Type="ZUI_FLIGHT_SRV.I_CurrencyType" Multiplicity="0..1" Role="ToRole_assoc_033E79A19535017DC4337ECFECDC1E70"/>
+            </Association>
+            <Association Name="assoc_1E1FF11F95CAC7E2321D27D7B3874941" sap:content-version="1">
+                <End Type="ZUI_FLIGHT_SRV.ZC_FlightType" Multiplicity="1" Role="FromRole_assoc_1E1FF11F95CAC7E2321D27D7B3874941"/>
+                <End Type="ZUI_FLIGHT_SRV.ZI_FlightScheduleType" Multiplicity="1" Role="ToRole_assoc_1E1FF11F95CAC7E2321D27D7B3874941"/>
+            </Association>
+            <Association Name="assoc_965191F0DFD899B4485EC07C9C8A0125" sap:content-version="1">
+                <End Type="ZUI_FLIGHT_SRV.ZC_FlightType" Multiplicity="1" Role="FromRole_assoc_965191F0DFD899B4485EC07C9C8A0125"/>
+                <End Type="ZUI_FLIGHT_SRV.ZI_TicketType" Multiplicity="*" Role="ToRole_assoc_965191F0DFD899B4485EC07C9C8A0125"/>
+            </Association>
+            <Association Name="assoc_7942BDF42080D9653BDAE507D37D4892" sap:content-version="1">
+                <End Type="ZUI_FLIGHT_SRV.ZC_FlightType" Multiplicity="1" Role="FromRole_assoc_7942BDF42080D9653BDAE507D37D4892"/>
+                <End Type="ZUI_FLIGHT_SRV.ZI_BookingType" Multiplicity="*" Role="ToRole_assoc_7942BDF42080D9653BDAE507D37D4892"/>
+            </Association>
+            <EntityContainer Name="ZUI_FLIGHT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_Currency" EntityType="ZUI_FLIGHT_SRV.I_CurrencyType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZC_Flight" EntityType="ZUI_FLIGHT_SRV.ZC_FlightType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_Booking" EntityType="ZUI_FLIGHT_SRV.ZI_BookingType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_FlightSchedule" EntityType="ZUI_FLIGHT_SRV.ZI_FlightScheduleType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_Ticket" EntityType="ZUI_FLIGHT_SRV.ZI_TicketType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_033E79A19535017DC4337ECFECDC1E70" Association="ZUI_FLIGHT_SRV.assoc_033E79A19535017DC4337ECFECDC1E70" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_Flight" Role="FromRole_assoc_033E79A19535017DC4337ECFECDC1E70"/>
+                    <End EntitySet="I_Currency" Role="ToRole_assoc_033E79A19535017DC4337ECFECDC1E70"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_965191F0DFD899B4485EC07C9C8A0125" Association="ZUI_FLIGHT_SRV.assoc_965191F0DFD899B4485EC07C9C8A0125" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_Flight" Role="FromRole_assoc_965191F0DFD899B4485EC07C9C8A0125"/>
+                    <End EntitySet="ZI_Ticket" Role="ToRole_assoc_965191F0DFD899B4485EC07C9C8A0125"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_7942BDF42080D9653BDAE507D37D4892" Association="ZUI_FLIGHT_SRV.assoc_7942BDF42080D9653BDAE507D37D4892" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_Flight" Role="FromRole_assoc_7942BDF42080D9653BDAE507D37D4892"/>
+                    <End EntitySet="ZI_Booking" Role="ToRole_assoc_7942BDF42080D9653BDAE507D37D4892"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_1E1FF11F95CAC7E2321D27D7B3874941" Association="ZUI_FLIGHT_SRV.assoc_1E1FF11F95CAC7E2321D27D7B3874941" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_Flight" Role="FromRole_assoc_1E1FF11F95CAC7E2321D27D7B3874941"/>
+                    <End EntitySet="ZI_FlightSchedule" Role="ToRole_assoc_1E1FF11F95CAC7E2321D27D7B3874941"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZUI_FLIGHT_SRV.ZUI_FLIGHT_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZUI_FLIGHT_SRV.I_CurrencyType/Currency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.UnitSpecificScale" Path="Decimals"/>
+            </Annotations>
+            <atom:link rel="self" href="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/sap/ZUI_FLIGHT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://pcoe2021.sigma.co.id:8443/sap/opu/odata/sap/ZUI_FLIGHT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
